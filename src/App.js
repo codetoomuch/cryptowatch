@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-import "./App.css";
+import CoinCard from "./CoinCard";
+
+import classes from "./App.module.css";
 
 const App = () => {
-  const [cryptoCoin, setCryptoCoin] = useState([]);
+  const [cryptoCoins, setCryptoCoins] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -15,41 +17,36 @@ const App = () => {
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h"
     );
     const data = await response.json();
-    setCryptoCoin(data);
+    setCryptoCoins(data);
   };
 
   const searchQueryHandler = (e) => {
     setSearchQuery(e.target.value);
-    console.log(e.target.value);
   };
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
   };
 
-  const cryptoCoins = cryptoCoin.map((coin) => {
-    return (
-      <div key={coin.id}>
-        {" "}
-        <p> {coin.id} </p>
-        <div> {coin.image} </div>
-      </div>
-    );
-  });
+  const filteredCryptoCoin = cryptoCoins.filter((coin) =>
+    coin.id.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
-    <div className="App">
+    <div className={classes.App}>
       <form onSubmit={formSubmitHandler}>
-        <h3>Search Crypto</h3>
-        <input
-          onChange={searchQueryHandler}
-          value={searchQuery}
-          type="text"
-          maxLength={20}
-          placeholder="Search cryptocurrency..."
-        />
+        <div className={classes.searchInput}>
+          <h3>Search Crypto</h3>
+          <input
+            onChange={searchQueryHandler}
+            value={searchQuery}
+            type="text"
+            maxLength={20}
+            placeholder="Search cryptocurrency..."
+          />
+        </div>
       </form>
-      {cryptoCoins}
+      <CoinCard coins={filteredCryptoCoin} />
     </div>
   );
 };
