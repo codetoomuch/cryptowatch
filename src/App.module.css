@@ -16,13 +16,21 @@ body {
   color: #fff;
 }
 
-input {
-  margin: 2rem 0;
-  width: 300px;
+.searchInput {
+  margin: 1rem;
+  padding: 0.2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.9);
+}
+
+.searchInput input {
+  width: 100%;
   font-family: inherit;
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  text-align: center;
   border-radius: 12px;
   outline: none;
 }

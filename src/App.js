@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import CoinCard from "./CoinCard";
+import CoinCard from "./components/CoinCard";
 
 import classes from "./App.module.css";
 
@@ -33,10 +33,9 @@ const App = () => {
   );
 
   return (
-    <div className={classes.App}>
-      <form onSubmit={formSubmitHandler}>
+    <>
+      <form className={classes.form} onSubmit={formSubmitHandler}>
         <div className={classes.searchInput}>
-          <h3>Search Crypto</h3>
           <input
             onChange={searchQueryHandler}
             value={searchQuery}
@@ -46,8 +45,10 @@ const App = () => {
           />
         </div>
       </form>
-      <CoinCard coins={filteredCryptoCoin} />
-    </div>
+      <ul>
+        <CoinCard coins={filteredCryptoCoin} />
+      </ul>
+    </>
   );
 };
 
