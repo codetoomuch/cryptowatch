@@ -1,0 +1,14 @@
+.Loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.logo {
+  text-align: center;
+}
+.logo img {
+  position: relative;
+  left: 6px;
+}

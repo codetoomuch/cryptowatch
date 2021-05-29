@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import CoinCard from "./components/CoinCard";
 
+import Loading from "./assets/Loading";
 import classes from "./App.module.css";
 
 const App = () => {
   const [cryptoCoins, setCryptoCoins] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isOverlay, setIsOverlay] = useState(true);
 
   useEffect(() => {
     fetchCryptoApi();
@@ -17,6 +19,7 @@ const App = () => {
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h"
     );
     const data = await response.json();
+    setIsOverlay(false);
     setCryptoCoins(data);
   };
 
@@ -31,9 +34,9 @@ const App = () => {
   const filteredCryptoCoin = cryptoCoins.filter((coin) =>
     coin.id.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  return (
+  const displayCoins = (
     <>
+      {" "}
       <form className={classes.form} onSubmit={formSubmitHandler}>
         <div className={classes.searchInput}>
           <input
@@ -50,6 +53,8 @@ const App = () => {
       </ul>
     </>
   );
+
+  return <>{isOverlay ? <Loading /> : displayCoins}</>;
 };
 
 export default App;
