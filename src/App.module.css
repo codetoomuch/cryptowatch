@@ -17,6 +17,7 @@ body {
 }
 
 .searchInput {
+  width: 50rem;
   margin: 1rem;
   padding: 0.2rem;
   background-color: #fff;
@@ -27,7 +28,7 @@ body {
 .searchInput input {
   width: 100%;
   font-family: inherit;
-  padding: 0.2rem 0.3rem;
+  padding: 0.3rem 0.2rem;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;

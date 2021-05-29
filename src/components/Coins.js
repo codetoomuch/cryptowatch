@@ -9,12 +9,20 @@ const Coins = (props) => {
         <h2>{props.name}</h2>
       </div>
       <div className={classes.prices}>
+        <label>current price</label>
         <h3>₹ {props.current_price.toLocaleString()}</h3>
+        <label>price change </label>
         <h3>{props.price_change_percentage_24h.toFixed(2)} %</h3>
       </div>
-      <h3>{props.total_volume.toLocaleString()}</h3>
+      <div className={classes.totalVolume}>
+        <label>total volume</label>
+        <h3>{props.total_volume.toLocaleString()}</h3>
+      </div>
+
       <div className={classes.highNLow}>
+        <label>24h high</label>
         <h3 style={{ color: "red" }}>{props.high_24h.toLocaleString()}</h3>
+        <label>24h low</label>
         <h3 style={{ color: "green" }}>{props.low_24h.toLocaleString()}</h3>
       </div>
     </li>
