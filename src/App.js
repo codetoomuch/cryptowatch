@@ -9,7 +9,7 @@ import classes from "./App.module.css";
 const App = () => {
   const [cryptoCoins, setCryptoCoins] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isOverlay, setIsOverlay] = useState(true);
+  const [isLoadingScreen, setIsLoadingScreen] = useState(false);
 
   useEffect(() => {
     fetchCryptoApi();
@@ -20,7 +20,7 @@ const App = () => {
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h"
     );
     const data = await response.json();
-    setIsOverlay(false);
+    setIsLoadingScreen(true);
     setCryptoCoins(data);
   };
 
@@ -58,7 +58,7 @@ const App = () => {
     </>
   );
 
-  return <>{isOverlay ? <Loading /> : displayCoins}</>;
+  return <>{isLoadingScreen ? displayCoins : <Loading />}</>;
 };
 
 export default App;
