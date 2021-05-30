@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import CoinCard from "./components/CoinCard";
-
 import Loading from "./assets/Loading";
+import Modal from "./components/Modal/Modal";
+
 import classes from "./App.module.css";
 
 const App = () => {
@@ -36,7 +37,6 @@ const App = () => {
   );
   const displayCoins = (
     <>
-      {" "}
       <form className={classes.form} onSubmit={formSubmitHandler}>
         <div className={classes.searchInput}>
           <input
@@ -49,7 +49,11 @@ const App = () => {
         </div>
       </form>
       <ul>
-        <CoinCard coins={filteredCryptoCoin} />
+        {filteredCryptoCoin.length > 0 ? (
+          <CoinCard coins={filteredCryptoCoin} />
+        ) : (
+          <Modal />
+        )}
       </ul>
     </>
   );

@@ -1,0 +1,17 @@
+.modal {
+  margin-top: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBox {
+  padding: 20px;
+  border: 1px solid white;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
+  border-radius: 12px;
+  padding: 5px;
+}

@@ -2,13 +2,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: #333;
 }
 
-.logo {
-  text-align: center;
-}
-.logo img {
+.flexLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  left: 6px;
+  top: 5rem;
+  left: 3rem;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.logoImg {
+  position: relative;
+  left: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  .flexLogo {
+    position: relative;
+    left: 5rem;
+    text-align: center;
+    letter-spacing: 3px;
+  }
+  .logo img {
+    position: relative;
+    left: 1.5rem;
+  }
 }
