@@ -12,7 +12,13 @@ const Coins = (props) => {
         <label>current price</label>
         <h3>₹ {props.current_price.toLocaleString()}</h3>
         <label>price change </label>
-        <h3>{props.price_change_percentage_24h.toFixed(2)} %</h3>
+        <h3
+          className={
+            props.price_change_percentage_24h > 0 ? classes.gain : classes.loss
+          }
+        >
+          {props.price_change_percentage_24h.toFixed(2)} %
+        </h3>
       </div>
       <div className={classes.totalVolume}>
         <label>total volume</label>
@@ -21,9 +27,9 @@ const Coins = (props) => {
 
       <div className={classes.highNLow}>
         <label>24h high</label>
-        <h3 style={{ color: "red" }}>{props.high_24h.toLocaleString()}</h3>
+        <h3 className={classes.gain}>{props.high_24h.toLocaleString()}</h3>
         <label>24h low</label>
-        <h3 style={{ color: "green" }}>{props.low_24h.toLocaleString()}</h3>
+        <h3 className={classes.loss}>{props.low_24h.toLocaleString()}</h3>
       </div>
     </li>
   );

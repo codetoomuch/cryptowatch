@@ -6,7 +6,6 @@
   align-items: center;
   border-bottom: 1.5px dashed #fff;
   list-style: none;
-  /* border: 1px solid white; */
 }
 
 .description {
@@ -16,7 +15,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* border: 1px solid white; */
 }
 
 .description img {
@@ -24,9 +22,6 @@
   margin: 1rem 0.3rem;
   height: 90px;
   width: 90px;
-  /* border: 1px solid white; */
-
-  /* animation: rotateAnime 3s ease-in infinite; */
 }
 
 .prices,
@@ -45,14 +40,3 @@
 .loss {
   color: red;
 }
-
-/* @keyframes rotateAnime {
-  from {
-    transform: rotateY(0deg);
-  }
-
-  to {
-    transform: rotateY(360deg);
-  }
-}
-*/
