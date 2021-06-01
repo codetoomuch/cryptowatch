@@ -1,3 +1,3 @@
 ## cryptoWatch
 
- -- is a cryptocurrency tracker.
+	- is a cryptocurrency tracker.
