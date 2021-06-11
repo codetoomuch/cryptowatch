@@ -1,36 +1,26 @@
 .Loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #333;
-}
-
-.flexLogo {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 5rem;
-  right: 1.5rem;
-  text-align: center;
-  letter-spacing: 3px;
 }
 
-.logoImg {
-  position: relative;
-  left: 1.5rem;
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 500px) {
-  .flexLogo {
+img {
+  height: 200px;
+  width: 200px;
+}
+
+@media (max-width: 700px) {
+  .Loading {
     position: relative;
-    left: 5rem;
-    text-align: center;
-    letter-spacing: 3px;
-  }
-  .logo img {
-    position: relative;
-    left: 1.5rem;
+    left: 4.7rem;
   }
 }

@@ -36,9 +36,15 @@ body {
   outline: none;
 }
 
-@media (max-width: 500px) {
+footer {
+  font-size: 1.2rem;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
   body {
-    justify-content: start;
+    justify-content: flex-start;
     margin: 3rem auto;
   }
 }

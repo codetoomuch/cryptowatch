@@ -34,6 +34,7 @@ const CoinCard = ({ coins }) => {
           />
         );
       })}
+      <footer>Made with &hearts; by @codetoomuch</footer>
     </>
   );
 };
