@@ -33,7 +33,7 @@ const App = () => {
   };
 
   const filteredCryptoCoin = cryptoCoins.filter((coin) =>
-    coin.id.toLowerCase().includes(searchQuery.toLowerCase())
+    coin.id.toLowerCase().includes(searchQuery.trim().toLowerCase())
   );
   const displayCoins = (
     <>
