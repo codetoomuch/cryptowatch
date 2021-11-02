@@ -1,3 +1,5 @@
+import React from "react";
+
 import classes from "./Coins.module.css";
 
 const Coins = (props) => {
@@ -10,7 +12,7 @@ const Coins = (props) => {
       </div>
       <div className={classes.prices}>
         <label>current price</label>
-        <h3>₹ {props.current_price.toLocaleString('en-IN')}</h3>
+        <h3>₹ {props.current_price.toLocaleString("en-IN")}</h3>
         <label>price change </label>
         <h3
           className={
@@ -22,14 +24,18 @@ const Coins = (props) => {
       </div>
       <div className={classes.totalVolume}>
         <label>total volume</label>
-        <h3>{props.total_volume.toLocaleString('en-IN')}</h3>
+        <h3>{props.total_volume.toLocaleString("en-IN")}</h3>
       </div>
 
       <div className={classes.highNLow}>
         <label>24h high</label>
-        <h3 className={classes.gain}>{props.high_24h.toLocaleString('en-IN')}</h3>
+        <h3 className={classes.gain}>
+          {props.high_24h.toLocaleString("en-IN")}
+        </h3>
         <label>24h low</label>
-	      <h3 className={classes.loss}>{props.low_24h.toLocaleString('en-IN')}</h3>
+        <h3 className={classes.loss}>
+          {props.low_24h.toLocaleString("en-IN")}
+        </h3>
       </div>
     </li>
   );
