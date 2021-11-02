@@ -1,8 +1,10 @@
+import React from "react";
+
 import cryptoWatchLogo from "./cryptowatch.svg";
 import loadingGif from "./loading.gif";
 import classes from "./Loading.module.css";
 
-const Loading = () => {
+export default function Loading() {
   return (
     <div className={classes.Loading}>
       <div className={classes.logo}>
@@ -18,6 +20,4 @@ const Loading = () => {
       </div>
     </div>
   );
-};
-
-export default Loading;
+}
