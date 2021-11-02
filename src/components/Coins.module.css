@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1.5px dashed #fff;
   list-style: none;
+  box-shadow: 0 0 12px rgba(0,0,0,0.9)
 }
 
 .description {
